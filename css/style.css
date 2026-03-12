@@ -15,7 +15,7 @@ body {
 header,
 nav,
 main {
-  max-width: 895px;
+  max-width: 950px;
   margin: 0 auto;
   padding: 0 25px;
 }
