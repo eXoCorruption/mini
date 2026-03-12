@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fff;
+}
+
+/* ── WRAPPER: zentriert mit Abstand links/rechts ── */
+header,
+nav,
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+
+/* ══════════════════════════════
+   HEADER
+══════════════════════════════ */
+header {
+  position: relative;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/* Hintergrundbild – volle Breite */
+header > img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Logo oben links */
+header #logo {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+}
+
+header #logo img {
+  width: 70px;
+  height: auto;
+}
+
+/* Titel neben Logo */
+header h1 {
+  position: absolute;
+  top: 22px;
+  left: 100px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111;
+}
+
+
+/* ══════════════════════════════
+   NAVIGATION
+══════════════════════════════ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #0206cf;
+}
+
+nav a.active {
+  text-decoration: underline;
+}
+
+
+/* ══════════════════════════════
+   MAIN / WRAPPER
+══════════════════════════════ */
+main {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+
+/* ══════════════════════════════
+   MINI NEWS
+══════════════════════════════ */
+#news {
+  margin-bottom: 30px;
+}
+
+#news h2 {
+  font-size: 0.95rem;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 14px;
+}
+
+/* 3-Spalten-Layout für die Artikel */
+#news {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 20px;
+}
+
+/* Titel über alle 3 Spalten */
+#news h2 {
+  grid-column: 1 / -1;
+}
+
+article h3 {
+  font-size: 0.82rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+article p {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+
+/* ══════════════════════════════
+   ARTIKEL SEKTIONEN (Bild + Text)
+══════════════════════════════ */
+
+/* Slogan nur beim ersten Artikel */
+#countryman-slogan {
+  grid-column: 1 / -1;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #b80202;
+  margin-bottom: 14px;
+}
+
+/* Gemeinsames Layout: Bild links, Text rechts */
+.artikel {
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  column-gap: 25px;
+  padding: 20px 0;
+  margin: 0 -25px;      /* Hintergrund über volle Wrapper-Breite */
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* Grauer Hintergrund für abwechselnde Sektionen */
+.artikel.grau {
+  background-color: #e8e8e8;
+}
+
+/* Slogan überspannt beide Spalten */
+.artikel > p#countryman-slogan {
+  grid-column: 1 / -1;
+}
+
+.artikel figure {
+  margin: 0;
+  grid-column: 1;
+}
+
+.artikel figure img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.artikel aside {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.artikel aside h3 {
+  font-size: 0.95rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #b80202;
+  border-bottom: 2px solid #b80202;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.artikel aside p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #222;
+}
+
+.artikel aside ul {
+  list-style: disc;
+  padding-left: 18px;
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: #222;
+}
